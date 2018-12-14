@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@drawable/background_gradient"
+    tools:context=".HomeAdmin">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="122dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="115dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:text="HALO,"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvResultNama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="34dp"
+            android:textSize="23sp"
+            tools:text="Nama" />
+
+        <TextView
+            android:id="@+id/tvResultEmailAdmin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginBottom="16dp"
+            android:textSize="20sp"
+            tools:text="Email" />
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btnLogout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="logout"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bg_rectangle_button"
+        android:textColor="#FFF"/>
+
+    <Button
+        android:id="@+id/btCekMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="159dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginLeft="42dp"
+        android:text="Edit Menu"
+        android:background="@drawable/bg_rectangle_button"
+        android:textColor="#FFF"/>
+
+    <Button
+        android:id="@+id/btInputMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/btCekMenu"
+        android:layout_marginEnd="42dp"
+        android:layout_marginRight="42dp"
+        android:text="Tambah Menu"
+        android:background="@drawable/bg_rectangle_button"
+        android:textColor="#FFF"/>
+
+</RelativeLayout>

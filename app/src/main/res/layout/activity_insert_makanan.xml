@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_insert"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MenuMakananActivity.InsertMakananActivity">
+    <TextView
+        android:id="@+id/tvId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/edtId"
+        android:layout_alignStart="@+id/tvNama"
+        android:layout_alignLeft="@+id/tvNama"
+        android:text="Id Makanan : "
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/tvNama"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/edtNama"
+        android:layout_alignStart="@+id/tvHarga"
+        android:layout_alignLeft="@+id/tvHarga"
+        android:text="Nama Makanan: "
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/tvHarga"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/edtHarga"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="33dp"
+        android:layout_marginLeft="33dp"
+        android:text="Harga Makanan : "
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/edtId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/edtNama"
+        android:layout_alignLeft="@+id/edtNama"
+        android:layout_marginTop="32dp"
+        android:hint="Id Makanan" />
+
+    <EditText
+        android:id="@+id/edtNama"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="35dp"
+        android:layout_marginRight="35dp"
+        android:layout_marginTop="85dp"
+        android:hint="Nama Makanan" />
+
+    <EditText
+        android:id="@+id/edtHarga"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/edtId"
+        android:layout_alignLeft="@+id/edtId"
+        android:layout_marginTop="140dp"
+        android:hint="Harga Makanan" />
+
+    <LinearLayout
+        android:id="@+id/Linearlayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="169dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btInserting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Insert" />
+
+        <Button
+            android:id="@+id/btBackGo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Back" />
+    </LinearLayout>
+
+</RelativeLayout>
