@@ -33,7 +33,7 @@ public class AwalActivity extends AppCompatActivity {
         btnUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intUser = new Intent(mContext, MainActivity.class);
+                Intent intUser = new Intent(mContext, ScanActivity.class);
                 startActivity(intUser);
             }
         });
