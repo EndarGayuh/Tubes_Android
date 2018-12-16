@@ -67,13 +67,6 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        btnRegister = (Button) findViewById(R.id.btnRegister);
-        btnRegister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(mContext, RegisterActivity.class));
-            }
-        });
 
         // Code berikut berfungsi untuk mengecek session, Jika session true ( sudah login )
         // maka langsung memulai MainActivity.

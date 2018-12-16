@@ -16,13 +16,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".MainActivity"></activity>
         <activity
             android:name=".LoginActivity.LoginActivity"
             android:label="@string/title_activity_login" />
@@ -30,7 +24,14 @@
         <activity android:name=".HomeAdmin" />
         <activity android:name=".MenuMakananActivity.EditMakananActivity" />
         <activity android:name=".MenuMakananActivity.InsertMakananActivity" />
-        <activity android:name=".MenuMakananActivity.MenuMakananAdminActivity"></activity>
+        <activity android:name=".MenuMakananActivity.MenuMakananAdminActivity" />
+        <activity android:name=".AwalActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

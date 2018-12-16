@@ -49,17 +49,6 @@ public class MainActivity extends AppCompatActivity {
         ma=this;
         refresh();
 
-        mContext = getApplicationContext();
-        Intent mIntent = getIntent();
-
-        buttonkelogin = (Button) findViewById(R.id.buttonkelogin);
-        buttonkelogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(mContext, LoginActivity.class);
-                startActivity(intent);
-            }
-        });
     }
 
     public void refresh() {

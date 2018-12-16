@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.muktitama.tb_endargayuhmuktitama.LoginActivity.LoginActivity;
+import com.muktitama.tb_endargayuhmuktitama.LoginActivity.RegisterActivity;
 import com.muktitama.tb_endargayuhmuktitama.MenuMakananActivity.InsertMakananActivity;
 import com.muktitama.tb_endargayuhmuktitama.MenuMakananActivity.MenuMakananAdminActivity;
 import com.muktitama.tb_endargayuhmuktitama.rest.ApiClient;
@@ -36,6 +37,9 @@ public class HomeAdmin extends AppCompatActivity {
     @BindView(R.id.btInputMenu)
     Button btInputMenu;
 
+    @BindView(R.id.btRegis)
+    Button btRegis;
+
     SharedPrefManager sharedPrefManager;
 
     Context mContext;
@@ -53,7 +57,7 @@ public class HomeAdmin extends AppCompatActivity {
 
         tvResultEmailAdmin = (TextView) findViewById(R.id.tvResultEmailAdmin);
         tvResultEmailAdmin.setText(sharedPrefManager.getSPEmail());
-        tvResultEmailAdmin.setText();
+//        tvResultEmailAdmin.setText(sharedPrefManager.getSPNama());
 
         mContext = getApplicationContext();
         Intent mIntent = getIntent();
@@ -77,13 +81,22 @@ public class HomeAdmin extends AppCompatActivity {
             }
         });
 
+        btRegis = (Button) findViewById(R.id.btRegis);
+        btRegis.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, RegisterActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
         btnLogout = (Button) findViewById(R.id.btnLogout);
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 sharedPrefManager.saveSPBoolean(SharedPrefManager.SP_SUDAH_LOGIN, false);
-                startActivity(new Intent(HomeAdmin.this, MainActivity.class)
+                startActivity(new Intent(HomeAdmin.this, AwalActivity.class)
                         .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK));
                 finish();
             }
