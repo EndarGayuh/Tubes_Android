@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-<SurfaceView
+    <SurfaceView
     android:id="@+id/cameraPreview"
     android:layout_centerInParent="true"
     android:layout_width="match_parent"
@@ -21,4 +21,5 @@
         android:textSize="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
 </RelativeLayout>

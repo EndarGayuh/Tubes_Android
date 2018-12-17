@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.muktitama.tb_endargayuhmuktitama.ActivityPembelian;
+import com.muktitama.tb_endargayuhmuktitama.MainActivity;
 import com.muktitama.tb_endargayuhmuktitama.MenuMakananActivity.EditMakananActivity;
 import com.muktitama.tb_endargayuhmuktitama.R;
 import com.muktitama.tb_endargayuhmuktitama.model.Menu;
@@ -17,6 +19,7 @@ import java.util.List;
 public class MenuUserAdapter  extends RecyclerView.Adapter<MenuUserAdapter.MyViewHolder>{
 
     List<Menu> mMenuList;
+    MainActivity tes;
 
     public MenuUserAdapter(List <Menu> MenuList) {
         mMenuList = MenuList;
@@ -36,16 +39,16 @@ public class MenuUserAdapter  extends RecyclerView.Adapter<MenuUserAdapter.MyVie
         holder.mTextViewNama.setText(mMenuList.get(position).getNama_makanan());
         holder.mTextViewHarga.setText("Rp " + mMenuList.get(position).getHarga());
 
-//        holder.itemView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent mIntent = new Intent(view.getContext(), EditMakananActivity.class);
-//                mIntent.putExtra("Id_makanan", mMenuList.get(position).getId_makanan());
-//                mIntent.putExtra("Nama", mMenuList.get(position).getNama_makanan());
-//                mIntent.putExtra("Harga", mMenuList.get(position).getHarga());
-//                view.getContext().startActivity(mIntent);
-//            }
-//        });
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent mIntent = new Intent(view.getContext(), ActivityPembelian.class);
+                mIntent.putExtra("Nama", mMenuList.get(position).getNama_makanan());
+                mIntent.putExtra("Harga", mMenuList.get(position).getHarga());
+//                mIntent.putExtra("nomor", tes.nomor.toString());
+                view.getContext().startActivity(mIntent);
+            }
+        });
     }
 
     @Override

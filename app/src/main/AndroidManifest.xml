@@ -34,8 +34,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ScanActivity"></activity>
-        <meta-data android:name="com.google.android.gms.vision.DEPENDENCIES" android:value="barcode" />
+        <activity android:name=".ScanActivity" />
+
+        <meta-data
+            android:name="com.google.android.gms.vision.DEPENDENCIES"
+            android:value="barcode" />
+
+        <activity android:name=".ActivityPembelian"></activity>
     </application>
 
 </manifest>

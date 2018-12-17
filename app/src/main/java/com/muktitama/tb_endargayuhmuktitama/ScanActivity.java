@@ -2,6 +2,7 @@ package com.muktitama.tb_endargayuhmuktitama;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Vibrator;
 import android.support.annotation.NonNull;
@@ -31,6 +32,8 @@ public class ScanActivity extends AppCompatActivity {
     BarcodeDetector barcodeDetector;
     CameraSource cameraSource;
     final int requestCameraPermissionID = 1001;
+
+    Context mContext;
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
@@ -62,10 +65,13 @@ public class ScanActivity extends AppCompatActivity {
         barcodeDetector = new BarcodeDetector.Builder(this)
                 .setBarcodeFormats(Barcode.QR_CODE)
                 .build();
+
         cameraSource = new CameraSource
                 .Builder(this, barcodeDetector)
                 .setRequestedPreviewSize(800, 600)
                 .build();
+
+        mContext = getApplicationContext();
 
         //add event
         cameraPreview.getHolder().addCallback(new SurfaceHolder.Callback() {
@@ -110,6 +116,10 @@ public class ScanActivity extends AppCompatActivity {
                             Vibrator vibrator = (Vibrator)getApplicationContext().getSystemService(Context.VIBRATOR_SERVICE);
                             vibrator.vibrate(1000);
                             txtResult.setText(qrcodes.valueAt(0).displayValue);
+
+                            Intent intent = new Intent(mContext, MainActivity.class);
+                            intent.putExtra("nomor",txtResult.getText());
+                            startActivity(intent);
                         }
                     });
                 }

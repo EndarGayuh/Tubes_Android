@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.muktitama.tb_endargayuhmuktitama.Adapter.MakananAdapter;
 import com.muktitama.tb_endargayuhmuktitama.Adapter.MenuUserAdapter;
@@ -21,20 +22,26 @@ import com.muktitama.tb_endargayuhmuktitama.rest.ApiInterface;
 
 import java.util.List;
 
+import butterknife.BindView;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
+    @BindView(R.id.nomormeja)
+    TextView nomormeja;
+
     Button btIns;
     ApiInterface mApiInterface;
     private RecyclerView mRecyclerView;
-    private RecyclerView.Adapter mAdapter;
+    public RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     public static MainActivity ma;
+    public String nomor;
 
     Button buttonkelogin;
+
     Context mContext;
 
     @Override
@@ -46,6 +53,14 @@ public class MainActivity extends AppCompatActivity {
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
         mApiInterface = ApiClient.getClient().create(ApiInterface.class);
+
+        nomormeja = (TextView) findViewById(R.id.nomormeja);
+
+        //Cara Menampilkan intent nomor meja dari ScanActivity
+        Intent getIntent = this.getIntent();
+        nomor = getIntent.getExtras().getString("nomor");
+        nomormeja.setText("Nomor Meja : " + nomor);
+
         ma=this;
         refresh();
 

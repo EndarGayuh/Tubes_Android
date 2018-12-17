@@ -33,4 +33,12 @@ public interface ApiInterface {
     @FormUrlEncoded
     @POST("searchMakanan.php")
     Call<MenuResult> search(@Field("searchMakanan") String search);
+
+    @FormUrlEncoded
+    @POST("insertPembeli.php")
+    Call<MenuResult> input(@Field("NamaPelayan") String NamaPelayan,
+                            @Field("namaMenu") String namaMenu,
+                            @Field("harga") String harga,
+                            @Field("nomorMeja") String nomorMeja);
+
 }
